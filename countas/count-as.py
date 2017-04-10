@@ -5,12 +5,17 @@
     # print(count_as("not-a-file")) # should print 0
 
 def count_as(file_name):
-    f = open(file_name, "r")
-    text = f.read()
-    a_counter = 0
-    for letter in text:
-        if letter == "a" or letter == "A":
-            a_counter += 1
-    return a_counter
+    try:
+        f = open(file_name, "r")
+        text = f.read()
+        a_counter = 0
+        for letter in text:
+            if letter == "a" or letter == "A":
+                a_counter += 1
+        return a_counter
+    except FileNotFoundError:
+        return 0
 
 print(count_as("/Users/MrFox/OneDrive/greenfox/exam-trial-basics/countas/afile.txt"))
+
+print(count_as("no_such_file.txt"))
