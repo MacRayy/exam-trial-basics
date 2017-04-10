@@ -10,7 +10,9 @@ class Cuboid(object):
         self.length = length
 
     def get_surface(self):
-        pass
+        surface = 0
+        surface = 2 * (self.width * self.height) + 2 * (self.height * self.length) + 2 * (self.width * self.length)
+        return surface
 
     def get_volume(self):
         pass
